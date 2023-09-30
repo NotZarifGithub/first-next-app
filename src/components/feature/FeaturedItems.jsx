@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Button from '../common/Button'
+import { featuredProducts } from '@/src/data'
 
 const FeaturedItems = () => {
   return (
@@ -8,38 +9,43 @@ const FeaturedItems = () => {
 
         {/* WRAPPER */}
 
-        <div className='flex w-max'>
+        <div className='flex w-max '>
 
           {/* SINGLE ITEM */}
 
-          <div className='w-screen h-[60vh] flex flex-col items-center justify-around p-4'>
+          {featuredProducts.map(item => (
+            <div  
+              className='w-screen h-[60vh] flex flex-col items-center justify-around p-4 hover:bg-fuchsia-50 transition duration-300 ease-in-out md:w-[50vw] lg:w-[33vw] lg:h-[80vh]'
+              key={item.id}
+            >
 
-            {/* IMAGE CONTAINER */}
+              {/* IMAGE CONTAINER */}
 
-            <div className='relative flex-1 w-full'>
-              <Image 
-                src="/p1.png"
-                alt=""
-                className='object-contain'
-                fill
-              />
+              <div className='relative flex-1 w-full hover:rotate-[60deg] transition-all duration-500'>
+                <Image 
+                  src={item.img}
+                  alt=""
+                  className='object-contain'
+                  fill
+                />
+              </div>
+
+              {/* TEXT CONTAINER */}
+
+              <div className='flex flex-col items-center justify-center gap-4 text-center py-7'>
+                <h1 className='text-xl font-bold uppercase lg:text-2xl xl:text-3xl'>
+                  {item.title}
+                </h1>
+                <p className='py-4 2xl:py-8'>
+                  {item.desc}
+                </p>
+                <h1 className='font-bold'>
+                  ${item.price}
+                </h1>
+                <Button />
+              </div>
             </div>
-
-            {/* TEXT CONTAINER */}
-
-            <div className='flex flex-col items-center justify-center gap-2 py-4 text-center'>
-              <h1 className='text-xl font-bold uppercase'>
-                test 
-              </h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cumque voluptatibus impedit rem aliquid quisquam dolores inventore, cum soluta? Officiis.
-              </p>
-              <h1 className='font-bold'>
-                $0.00
-              </h1>
-              <Button />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
