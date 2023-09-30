@@ -4,10 +4,10 @@ import React from 'react'
 const Footer = () => {
   return (
     <section>
-      <div className='flex justify-between items-center h-20 lg:px-20 xl:px-40 text-red-500 uppercase'>
+      <div className='flex items-center justify-between h-20 text-red-500 uppercase lg:px-20 xl:px-40'>
         <Link 
           href={"/"}
-          className='font-bold text-xl'
+          className='text-xl font-bold'
         >
           Massimo
         </Link>

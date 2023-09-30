@@ -1,8 +1,13 @@
+import FeaturedItems from "../components/feature/FeaturedItems";
+import Hero from "../components/feature/Hero";
+import Promotion from "../components/feature/Promotion";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hello
+    <main className="">
+      <Hero />
+      <FeaturedItems />
+      <Promotion />
     </main>
   )
 }
