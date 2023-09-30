@@ -4,6 +4,8 @@ import CountDown from './CountDown'
 
 const Promotion = () => {
 
+  // PROMOTION DATA
+  
   const promoTitle = "delicious burger & french fry"
   const promoDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo temporibus, eius magni doloribus pariatur sequi est dolorum fugit quasi itaque?"
   
@@ -14,13 +16,13 @@ const Promotion = () => {
         {/* TEXT CONTAINER */}
 
         <div className='flex flex-col items-center justify-center flex-1 gap-8 p-6 text-center'>
-          <h1 className='text-4xl font-bold uppercase xl:text-5xl'>
+          <h1 className='text-4xl font-bold text-red-500 uppercase xl:text-5xl'>
             {promoTitle}
           </h1>
           <p className='xl:text-xl'>
             {promoDesc}
           </p>
-          <p className='text-5xl'>
+          <p className='text-5xl text-orange-400'>
             07:10:38:59
           </p>
           <Button />
